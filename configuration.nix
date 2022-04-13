@@ -67,10 +67,6 @@
 
   programs.zsh = {
       enable = true;
-      ohMyZsh = {
-          enable = true;
-          theme = "bira";
-      };
   };
 
 
@@ -91,7 +87,7 @@
       useDHCP = false;
       ipv4.addresses = [{
         # I used static IP over WLAN because I want to use it as local DNS resolver
-        address = "192.168.100.4";
+        address = "192.168.21.28";
         prefixLength = 24;
       }];
     };
@@ -105,15 +101,11 @@
     };
 
     # Enabling WIFI
-    wireless.enable = true;
-    wireless.interfaces = [ "wlan0" ];
-    # If you want to connect also via WIFI to your router
-    wireless.networks."WIFI-SSID".psk = "wifipass";
     # You can set default nameservers
-    nameservers = [ "192.168.100.3" "192.168.100.4" "192.168.100.1" ];
+    nameservers = [ "8.8.8.8" "8.4.4.8" "1.1.1.1" ];
     # You can set default gateway
     defaultGateway = {
-      address = "192.168.100.1";
+      address = "192.168.21.1";
       interface = "wlan0";
     };
   };
